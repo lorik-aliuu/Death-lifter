@@ -10,7 +10,8 @@
     background-color: black;
 }
 
-.link {
+.link ul {
+    list-style: none;
     display: flex;
 
 }
@@ -61,4 +62,74 @@
 .link a:hover::after {
     background-color: transparent;
     transform: scaleX(0);
+}
+
+.hm{
+    display: none;
+}
+
+@media only screen and (max-width: 1320px){
+    .navbar{
+        padding: 0 50px;
+    }
+
+}
+
+@media only screen and (max-width: 1100px){
+    .navbar{
+        padding: 0 30px;
+    }
+
+}
+
+@media only screen and (max-width: 900px){
+   .hm{
+    display: block;
+    cursor: pointer;us
+   }
+
+   .hm .line{
+    width: 30px;
+    height: 3px;
+    background: #fefefe;
+    margin: 6px 0;
+   }
+
+   .link{
+    height: 0;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    right: 0;
+    width: 100vw;;
+    background: black;
+    transition: 0.5s;
+    overflow: hidden;
+   }
+
+   .link.active{
+    height: 450px;
+
+   }
+
+   .link ul{
+    display: block;
+    width: fit-content;
+    margin: 80px auto 0 auto;
+    text-align: center;
+    transition: 0.5s;
+    opacity: 0;
+
+   }
+
+   .link.active ul{
+    opacity: 1;
+   }
+
+   .link ul li a{
+    margin-bottom: 27px;
+    font-size: 25px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+   }
+
 }
