@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="logo-removebg-preview.png" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    />
+    <title>Contact us - Death Lifter</title>
+    <style>
+       * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            font-family: 'Popins', sans-serif;
+          }
+
+          .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: black;
+          }
+
+          .link ul {
+            list-style: none;
+            display: flex;
+          }
+
+          .link a {
+            margin-right: 26px;
+            text-decoration: none;
+            color: white;
+            font-size: 17px;
+            font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+              "Lucida Sans", Arial, sans-serif;
+            transition: all 0.2s;
+            position: relative;
+            z-index: 9999;
+          }
+
+          .link a::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: transparent;
+            transform: scaleX(0);
+            transform-origin: bottom right;
+            transition: transform 0.3s ease;
+          }
+
+          .link a:hover::before {
+            background-color: white;
+            transform: scaleX(1);
+            transform-origin: bottom left;
+          }
+
+          .link a:not(:last-child)::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: transparent;
+            transform: scaleX(0);
+            transform-origin: bottom right;
+            transition: transform 0.3s ease;
+          }
+
+          .link a:hover::after {
+            background-color: transparent;
+            transform: scaleX(0);
+          }
+
+          .hm {
+            display: none;
+          }
+
+          @media only screen and (max-width: 1360px) {
+            .navbar {
+              padding: 0 50px;
+            }
+
+          }
+
+          @media only screen and (max-width: 1200px) {
+            .navbar {
+              padding: 0 30px;
+            }
+            .container{
+              display: flex;
+              justify-content: center;
+              align-items: center;
+          }
+
+          .first{
+            margin-top: 20px;
+              display: flex;
+              justify-content: center;
+              flex-direction: column;
+
+          }
+          }
+
+          @media only screen and (max-width: 900px) {
+            .hm {
+              display: block;
+              cursor: pointer;
+            }
+
+            .hm .line {
+              width: 30px;
+              height: 3px;
+              background: #fefefe;
+              margin: 6px 0;
+            }
+
+            .link {
+              height: 0;
+              position: absolute;
+              top: 50px;
+              left: 0;
+              right: 0;
+              width: 100vw;
+              background: black;
+              transition: 0.5s;
+              overflow: hidden;
+              z-index: 9999;
+            }
+
+            .link.active {
+              height: 450px;
+            }
+
+            .link ul {
+              display: block;
+              width: fit-content;
+              margin: 80px auto 0 auto;
+              text-align: center;
+              transition: 0.5s;
+              opacity: 0;
+            }
+
+            .link.active ul {
+              opacity: 1;
+            }
+
+            .link ul li a {
+              margin-bottom: 27px;
+              font-size: 25px;
+              font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+            }
+            .container{
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+          }
+
+          .first{
+            margin-top: 20px;
+              display: flex;
+              justify-content: center;
+              flex-direction: column;
+
+          }
+
+          }
+
+          body{
+              background-color: black;
+          }
+
+          .content h2{
+              color: white;
+              text-align: center;
+              font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+              margin-top: 20px;
+              font-size: 36px;
+          }
+
+          .content p{
+              color: white;
+              text-align: center;
+              font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+              margin-top: 5px;
+              padding: 25px;
+              font-weight: 390;
+          }
+
+
+
+          .container{
+              display: flex;
+              justify-content: space-between;
+              margin-top: 40px;
+              background-color: white !important;
+          }
+
+          .first{
+              display: flex;
+              justify-content: center;
+              flex-direction: column;
+              margin-left: 40px;
+          }
+
+          .contactForm{
+              padding: 40px;
+
+              margin-right: 40px;
+
+              background-color: white;
+              color: black;
+              width: 450px;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              border-radius: 21px;
+          }
+
+          .contactForm label{
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      font-size: 13px;
+          }
+
+          .contactForm input{
+              background-color: white;
+              padding: 7px;
+              color: white;
+              border-radius: 10px;
+              width: 100%;
+          }
+
+          .contactForm textarea{
+              height: 100px;
+              width: 100%;
+              border-radius: 10px;
+          }
+
+
+          .Send:hover{
+              background-color: black;
+              color: white !important;
+          }
+
+      .inputBox span{
+          font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      font-size: 13px;
+          }
+
+
+          .social i {
+              font-size: 19px;
+              width: 35px;
+              height: 35px;
+              line-height: 35px;
+
+            }
+          }
+
+
+
+          .footer{
+              padding: 70px;
+
+          }
+
+          .footer .social {
+            width: 100%;
+            clear: both;
+            margin-top: 50px;
+            text-align: center;
+            display: inline-block;
+
+
+          }
+
+          .footer .social i {
+            color: black;
+            font-size: 22px;
+            height: 45px;
+            width: 45px;
+            background-color: white;
+            border: 2px solid black;
+            border-radius: 50%;
+            align-items: center;
+            line-height: 45px;
+            text-align: center;
+            margin-top: 0 10px;
+
+          }
+
+          .footer .social i:hover {
+            color: cornflowerblue;
+            background-color: darkgray;
+            transition: 1s ease;
+            transform: rotate(360deg);
+
+          }
+
+          .social p{
+              color: white;
+              text-align: center;
+               color: white;
+               margin-bottom: 20px;
+              font-size: 12px;
+              margin-top: 10px;
+          }
+    </style>
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="logo">
+        <img src="logo.jpg" alt="logo" width="54px" />
+      </div>
+
+      <div class="hm">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+
+      <div class="link">
+        <ul>
+          <li><a href="index.html" id="homeLink">Home</a></li>
+          <li><a href="about.html" id="aboutLink">About us</a></li>
+          <li><a href="programs.html" id="programsLink">Programs</a></li>
+          <li><a href="trainers.html" id="trainersLink">Trainers</a></li>
+          <li><a href="contact.html" id="contactLink">Contact us</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="content">
+      <h2>Contact us</h2>
+      <p>
+        "Welcome to our fitness sanctuary, where sweat meets determination and
+        goals become achievements. At our gym, we're not just about reps and
+        routines; we're a community driven by passion, committed to sculpting
+        bodies and minds. Whether you're a beginner or a seasoned athlete, our
+        doors are open to guide, support, and empower you on your fitness
+        journey. Contact us today and join a place where every drop of sweat
+        counts towards your success."
+      </p>
+    </div>
+
+    <div class="container">
+      <div class="first">
+        <div class="box">
+          <div class="icon"><img src="map.png" alt="map" width="50px" /></div>
+          <div class="text">
+            Address: "London Bridge Cottons, Unit 7, Cottons Centre,<br />
+            Tooley St, London SE1 2QG, United Kingdom."
+          </div>
+        </div>
+
+        <div class="box">
+          <div class="icon">
+            <img src="phone.png" alt="phone" width="50px" />
+          </div>
+          <div class="text">Phone: 507-475-6094</div>
+        </div>
+
+        <div class="box">
+          <div class="icon">
+            <img src="envelope.jpg" alt="envelope" width="50px" />
+          </div>
+          <div class="text">Email: Death-Liftergym@gmail.com</div>
+        </div>
+      </div>
+
+      <div class="contactForm">
+        <form>
+          <h2>Send message</h2>
+          <div class="inputBox">
+            <label for="emri">Full name</label><br />
+            <input type="text" name="emri" required="required" />
+          </div>
+          <div class="inputBox">
+            <label for="email">Email</label><br />
+            <input type="text" name="email" required="required" />
+          </div>
+          <div class="inputBox">
+            <span>Type your message:</span><br />
+            <textarea required="required"></textarea>
+          </div>
+          <div class="inputBox">
+            <input
+              type="submit"
+              class="Send"
+              value="Send"
+              style="color: black"
+            />
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="social">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <p class="copyright"><em>All rights reserved ©DeathLifter</em></p>
+      </div>
+    </div>
+
+    <script>
+      const hm = document.querySelector(".hm");
+
+      hm.addEventListener("click", function () {
+        const navbar = document.querySelector(".link");
+        navbar.classList.toggle("active");
+      });
+ 
+    </script>
+  </body>
+</html>

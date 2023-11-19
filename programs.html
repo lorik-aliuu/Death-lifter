@@ -142,5 +142,41 @@
 </head>
 <body>
     
+  <div class="navbar">
+
+    <div class="logo">
+        <img src="logo.jpg" alt="logo" width="54px">
+    </div>
+
+    <div class="hm">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+
+    </div>
+
+    <div class="link">
+        <ul>
+        <li><a href="index.html" id="homeLink">Home</a></li>
+        <li><a href="about.html" id="aboutLink">About us</a></li>
+        <li><a href="programs.html" id="programsLink">Programs</a></li>
+       <li><a href="trainers.html" id="trainersLink">Trainers</a></li>
+        <li><a href="contact.html">Contact us</a></li>
+        </ul>
+</div>
+</div>
+
+
+
+
+
+<script>
+  const hm = document.querySelector(".hm");
+
+  hm.addEventListener("click", function () {
+    const navbar = document.querySelector(".link");
+    navbar.classList.toggle("active");
+  });
+</script>
 </body>
 </html>
