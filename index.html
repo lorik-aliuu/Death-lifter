@@ -45,7 +45,7 @@
 
             </div>
             <div class="signup-text">
-                <p><a href="#">Already have an account?</a></p>
+                <p><a href="#" id="showLoginForm">Already have an account?</a></p>
             </div>
         </div>
     </div>
@@ -58,22 +58,22 @@
             <h1>Join us today!</h1>
             <div class="input-control">
                 <label for="username">Username</label>
-                <input id="username" name="username" type="text">
+                <input id="username" name="username" type="text" placeholder="Username should be unique">
                 <div class="error"></div>
             </div>
             <div class="input-control">
                 <label for="email">Email</label>
-                <input id="email" name="email" type="text">
+                <input id="email" name="email" type="text" placeholder="Enter your email">
                 <div class="error"></div>
             </div>
             <div class="input-control">
                 <label for="password">Password</label>
-                <input id="password"name="password" type="password">
+                <input id="password"name="password" type="password" placeholder="Atleast 8 characters">
                 <div class="error"></div>
             </div>
             <div class="input-control">
                 <label for="password2">Password again</label>
-                <input id="password2"name="password2" type="password">
+                <input id="password2"name="password2" type="password" placeholder="Confirm your password">
                 <div class="error"></div>
             </div>
             <button type="submit"  id="submitButton">Sign Up</button>
@@ -108,22 +108,26 @@
 </div>
         </div>
 
-       
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
         </div>
 
 
-
+        <div class="container2"  id="loginForm" style="display: none;">
+     
+            <form id="Loginform" action="/">
+                <h1>Log-in to your account</h1>
+                <div class="input-control">
+                    <label for="username">Username</label>
+                    <input id="username2" name="username" type="text" placeholder="Enter your username">
+                    <div class="error" id="usernameError"></div>
+                    </div>
+                    <div class="input-control">
+                        <label for="password">Password</label>
+                        <input id="passwordL"name="password" type="password" placeholder="Enter your password">
+                        <div class="error" id="passwordError"></div>
+                    </div><br>
+                    <button type="submit"  id="submitButton2">Log in</button>
+                </form>
+            </div>
 
 
 

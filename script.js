@@ -146,7 +146,8 @@ function toggleRegisterForm() {
 
 function changeButtonColor() {
   const submitButton = document.getElementById("submitButton");
-  submitButton.style.backgroundColor = "green";
+  submitButton.style.backgroundColor = "black";
+  submitButton.style.color = "white";
   setTimeout(() => {
     submitButton.style.backgroundColor = "";
   }, 500);
@@ -205,4 +206,86 @@ document.addEventListener("DOMContentLoaded", function () {
 
     requestAnimationFrame(animation);
   }
+});
+
+
+function toggleLoginForm() {
+  const loginForm = document.getElementById("loginForm");
+  const overlay = document.getElementById("overlay");
+  const backgroundImage = document.getElementById("backgroundImage");
+
+  if (loginForm.style.display === "none" || loginForm.style.display === "") {
+    loginForm.style.display = "block";
+    overlay.style.display = "block";
+    document.body.style.overflow = "hidden";
+    backgroundImage.style.filter = "blur(50px)";
+  } else {
+    loginForm.style.display = "none";
+    overlay.style.display = "none";
+    document.body.style.overflow = "visible";
+    backgroundImage.style.filter = "none";
+  }
+}
+
+document.getElementById('showLoginForm').addEventListener('click', function(event) {
+  event.preventDefault(); 
+  toggleLoginForm();
+});
+
+
+const loginForm = document.getElementById("loginForm");
+loginForm.addEventListener("submit", function (e) {
+  e.preventDefault();
+  validateLoginInputs();
+});
+
+
+function validateLoginInputs() {
+  const usernameValue = document.getElementById("username2").value.trim();
+  const passwordValue = document.getElementById("passwordL").value.trim();
+
+  // 
+  const usernameError = document.getElementById('usernameError');
+  const usernameRegex = /^[^0-9][\w\d]*$/; 
+
+  if (!usernameRegex.test(usernameValue)) {
+    usernameError.textContent = "Username is not valid.";
+  } else {
+    usernameError.textContent = "";
+  }
+
+  
+  const passwordError = document.getElementById('passwordError');
+  const passwordMinLength = 8;
+
+  if (passwordValue.length < passwordMinLength) {
+    passwordError.textContent = "Password should be at least 8 characters long.";
+  } else {
+    passwordError.textContent = "";
+  }
+
+  
+  if (usernameRegex.test(usernameValue) && passwordValue.length >= passwordMinLength) {
+    redirectToIndex(); 
+  }
+}
+
+
+function redirectToIndex() {
+  window.location.href = "index.html";
+}
+
+
+function changeButtonColor2() {
+  const submitButton2 = document.getElementById("submitButton2");
+  submitButton2.style.backgroundColor = "black";
+  submitButton2.style.color = "white";
+  setTimeout(() => {
+    submitButton2.style.backgroundColor = "";
+  }, 500);
+}
+
+const submitButton2 = document.getElementById("submitButton2");
+submitButton2.addEventListener("click", () => {
+  changeButtonColor2();
 });
