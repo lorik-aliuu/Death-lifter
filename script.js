@@ -289,3 +289,50 @@ const submitButton2 = document.getElementById("submitButton2");
 submitButton2.addEventListener("click", () => {
   changeButtonColor2();
 });
+
+
+
+const slider = document.querySelector('.image-slider');
+const arrowLeft = document.querySelector('.arrow-left');
+const arrowRight = document.querySelector('.arrow-right');
+const heading = document.querySelector('.caption h1');
+const description = document.querySelector('.caption p');
+
+const headings = 'Death Lifter';
+const descriptions = ['Your Only Limit is You', 'Train insane or remain the same', 'Embrace the pain to witness the change.'];
+
+const images = ['photo1slider.png', 'p2.avif', 'p3.avif'];
+
+let id = 0;
+
+function slide(id) {
+  slider.style.backgroundImage = `url(${images[id]})`;
+  heading.textContent = headings;
+  description.textContent = descriptions[id];
+}
+
+function initializeSlider() {
+  slide(id);
+}
+
+arrowLeft.addEventListener('click', () => {
+  id--;
+
+  if (id < 0) {
+    id = images.length - 1;
+  }
+  slide(id);
+});
+
+arrowRight.addEventListener('click', () => {
+  id++;
+
+  if (id > images.length - 1) {
+    id = 0;
+  }
+  slide(id);
+});
+
+
+
+
