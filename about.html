@@ -1,432 +1,402 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="logo-removebg-preview.png" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    />
+    <title>About Us - Death lifter</title>
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: black;
+      }
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" href="logo-removebg-preview.png" type="image/x-icon" />
-  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
-  <title>About Us - Death lifter</title>
-  <style>
-    * {
-      margin: 0px;
-      padding: 0px;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: black;
-
-    }
-
-    .navbar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background-color: black;
-    }
-
-    .link ul {
-      list-style: none;
-      display: flex;
-    }
-
-    .link a {
-      margin-right: 26px;
-      text-decoration: none;
-      color: white;
-      font-size: 17px;
-      font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-        "Lucida Sans", Arial, sans-serif;
-      transition: all 0.2s;
-      position: relative;
-    }
-
-    .link a::before {
-      content: "";
-      position: absolute;
-      width: 100%;
-      height: 2px;
-      bottom: 0;
-      left: 0;
-      background-color: transparent;
-      transform: scaleX(0);
-      transform-origin: bottom right;
-      transition: transform 0.3s ease;
-    }
-
-    .link a:hover::before {
-      background-color: white;
-      transform: scaleX(1);
-      transform-origin: bottom left;
-    }
-
-    .link a:not(:last-child)::after {
-      content: "";
-      position: absolute;
-      width: 100%;
-      height: 2px;
-      bottom: 0;
-      left: 0;
-      background-color: transparent;
-      transform: scaleX(0);
-      transform-origin: bottom right;
-      transition: transform 0.3s ease;
-    }
-
-    .link a:hover::after {
-      background-color: transparent;
-      transform: scaleX(0);
-    }
-
-    .hm {
-      display: none;
-    }
-
-    @media only screen and (max-width: 1360px) {
       .navbar {
-        padding: 0 50px;
-      }
-    }
-
-    @media only screen and (max-width: 1200px) {
-      .navbar {
-        padding: 0 30px;
-      }
-    }
-
-    @media only screen and (max-width: 900px) {
-      .hm {
-        display: block;
-        cursor: pointer;
-      }
-
-      .hm .line {
-        width: 30px;
-        height: 3px;
-        background: #fefefe;
-        margin: 6px 0;
-      }
-
-      .link {
-        height: 0;
-        position: absolute;
-        top: 50px;
-        left: 0;
-        right: 0;
-        width: 100vw;
-        background: black;
-        transition: 0.5s;
-        overflow: hidden;
-        z-index: 9999;
-      }
-
-      .link.active {
-        height: 450px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: black;
       }
 
       .link ul {
-        display: block;
-        width: fit-content;
-        margin: 80px auto 0 auto;
-        text-align: center;
-        transition: 0.5s;
-        opacity: 0;
+        list-style: none;
+        display: flex;
       }
 
-      .link.active ul {
-        opacity: 1;
+      .link a {
+        margin-right: 26px;
+        text-decoration: none;
+        color: white;
+        font-size: 17px;
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+          "Lucida Sans", Arial, sans-serif;
+        transition: all 0.2s;
+        position: relative;
       }
 
-      .link ul li a {
-        margin-bottom: 27px;
-        font-size: 25px;
-        font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+      .link a::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: transparent;
+        transform: scaleX(0);
+        transform-origin: bottom right;
+        transition: transform 0.3s ease;
       }
-    }
 
-    .section {
-      width: 100%;
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: black;
+      .link a:hover::before {
+        background-color: white;
+        transform: scaleX(1);
+        transform-origin: bottom left;
+      }
 
-    }
+      .link a:not(:last-child)::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: transparent;
+        transform: scaleX(0);
+        transform-origin: bottom right;
+        transition: transform 0.3s ease;
+      }
 
-    .section .container {
-      width: 80%;
-      display: block;
-      margin: 0 auto;
-      padding: 50px 0px;
+      .link a:hover::after {
+        background-color: transparent;
+        transform: scaleX(0);
+      }
 
-    }
+      .hm {
+        display: none;
+      }
 
-    .container .title {
-      width: 100%;
-      text-align: center;
-      margin-bottom: 50px;
+      @media only screen and (max-width: 1360px) {
+        .navbar {
+          padding: 0 50px;
+        }
+      }
 
-    }
+      @media only screen and (max-width: 1200px) {
+        .navbar {
+          padding: 0 30px;
+        }
+      }
 
-    .container .title h1 {
-      text-transform: uppercase;
-      font-size: 35px;
-      color: white;
+      @media only screen and (max-width: 900px) {
+        .hm {
+          display: block;
+          cursor: pointer;
+        }
 
-    }
+        .hm .line {
+          width: 30px;
+          height: 3px;
+          background: #fefefe;
+          margin: 6px 0;
+        }
 
-    .container .title h1::after {
-      content: "";
-      width: 180px;
-      height: 5px;
-      margin: auto;
-      color: white;
-      background-color: whitesmoke;
-      display: block;
+        .link {
+          height: 0;
+          position: absolute;
+          top: 50px;
+          left: 0;
+          right: 0;
+          width: 100vw;
+          background: black;
+          transition: 0.5s;
+          overflow: hidden;
+          z-index: 9999;
+        }
 
-    }
+        .link.active {
+          height: 450px;
+        }
 
-    .content {
-      float: left;
-      width: 55%;
-    }
+        .link ul {
+          display: block;
+          width: fit-content;
+          margin: 80px auto 0 auto;
+          text-align: center;
+          transition: 0.5s;
+          opacity: 0;
+        }
 
-    .image-section {
-      width: 40%;
-      float: right;
-    }
+        .link.active ul {
+          opacity: 1;
+        }
 
-    .image-section img {
-      width: 100%;
-      height: auto;
+        .link ul li a {
+          margin-bottom: 27px;
+          font-size: 25px;
+          font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+        }
+      }
 
-    }
+      .section {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: black;
+      }
 
-    .content .article h3 {
-      color: white;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      letter-spacing: .8px;
-      font-size: 19px;
-
-    }
-
-    .content .article p {
-      margin-top: 20px;
-      font-size: 17px;
-      line-height: 1.5;
-      color: whitesmoke;
-
-    }
-
-    .content .article .button {
-      margin-top: 50px;
-
-    }
-
-    .content .article .button a {
-      text-decoration: none;
-      padding: 8px 25px;
-      background-color: whitesmoke;
-      border-radius: 40px;
-      color: black;
-      font-size: 18px;
-      letter-spacing: 1.5px;
-
-    }
-
-    .content .article .button a:hover {
-      color: white;
-      background-color: black;
-      transition: 3s ease;
-      font-weight: bold;
-
-    }
-
-    .container .social {
-      width: 100%;
-      clear: both;
-      margin-top: 50px;
-      text-align: center;
-      display: inline-block;
-
-    }
-
-    .container .social i {
-      color: black;
-      font-size: 22px;
-      height: 45px;
-      width: 45px;
-      background-color: white;
-      border: 2px solid black;
-      border-radius: 50%;
-      align-items: center;
-      line-height: 45px;
-      text-align: center;
-      margin-top: 0 10px;
-
-    }
-
-    .container .social i:hover {
-      color: cornflowerblue;
-      background-color: darkgray;
-      transition: 1s ease;
-      transform: rotate(360deg);
-
-    }
-
-   
-    @media screen and (max-width:768px) {
       .section .container {
         width: 80%;
         display: block;
-        margin: auto;
+        margin: 0 auto;
+        padding: 50px 0px;
+      }
 
+      .container .title {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 50px;
+      }
+
+      .container .title h1 {
+        text-transform: uppercase;
+        font-size: 35px;
+        color: white;
+      }
+
+      .container .title h1::after {
+        content: "";
+        width: 180px;
+        height: 5px;
+        margin: auto;
+        color: white;
+        background-color: whitesmoke;
+        display: block;
       }
 
       .content {
-        float: none;
-        width: 100%;
-        display: block;
-        margin: auto;
+        float: left;
+        width: 55%;
       }
 
       .image-section {
-        float: none;
-        width: 100%;
-        margin-top: 50px;
-
+        width: 40%;
+        float: right;
       }
 
       .image-section img {
         width: 100%;
         height: auto;
-        display: block;
-        margin: auto;
-
       }
 
-      .container .title h1 {
+      .content .article h3 {
+        color: white;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        letter-spacing: 0.8px;
+        font-size: 19px;
+      }
+
+      .content .article p {
+        margin-top: 20px;
+        font-size: 17px;
+        line-height: 1.5;
+        color: whitesmoke;
+      }
+
+      .content .article .button {
+        margin-top: 50px;
+      }
+
+      .content .article .button a {
+        text-decoration: none;
+        padding: 8px 25px;
+        background-color: whitesmoke;
+        border-radius: 40px;
+        color: black;
+        font-size: 18px;
+        letter-spacing: 1.5px;
+      }
+
+      .content .article .button a:hover {
+        color: white;
+        background-color: black;
+        transition: 3s ease;
+        font-weight: bold;
+      }
+
+      .container .social {
+        width: 100%;
+        clear: both;
+        margin-top: 50px;
         text-align: center;
-        font-size: 30px;
-
-      }
-
-      .container .article .button {
-        text-align: center;
-
-      }
-
-      .container .article .button a {
-        padding: 6px 15px;
-        font-size: 16px;
-
+        display: inline-block;
       }
 
       .container .social i {
-        font-size: 19px;
-        width: 35px;
-        height: 35px;
-        line-height: 35px;
-
+        color: black;
+        font-size: 22px;
+        height: 45px;
+        width: 45px;
+        background-color: white;
+        border: 2px solid black;
+        border-radius: 50%;
+        align-items: center;
+        line-height: 45px;
+        text-align: center;
+        margin-top: 0 10px;
       }
-    }
 
-    .copyright{
-      text-align: center;
-      color: white;
-      margin-bottom: 20px;
-      font-size: 12px;
-      
-    }
+      .container .social i:hover {
+        color: cornflowerblue;
+        background-color: darkgray;
+        transition: 1s ease;
+        transform: rotate(360deg);
+      }
 
-   
-  </style>
-</head>
+      @media screen and (max-width: 768px) {
+        .section .container {
+          width: 80%;
+          display: block;
+          margin: auto;
+        }
 
-<body>
-  <div class="navbar">
-    <div class="logo">
-      <img src="logo.jpg" alt="logo" width="54px" />
-    </div>
+        .content {
+          float: none;
+          width: 100%;
+          display: block;
+          margin: auto;
+        }
 
-    <div class="hm">
-      <div class="line"></div>
-      <div class="line"></div>
-      <div class="line"></div>
-    </div>
+        .image-section {
+          float: none;
+          width: 100%;
+          margin-top: 50px;
+        }
 
-    <div class="link">
-      <ul>
-        <li><a href="index.html" id="homeLink">Home</a></li>
-          <li><a href="about.html">About us</a></li>
-        <li><a href="programs.html">Programs</a></li>
-        <li><a href="trainers.html">Trainers</a></li>
-        <li><a href="contact.html">Contact us</a></li>
-      </ul>
-    </div>
-  </div>
+        .image-section img {
+          width: 100%;
+          height: auto;
+          display: block;
+          margin: auto;
+        }
 
-  <div class="section">
-    <div class="container">
-      <div class="title">
-        <h1>About Us</h1>
+        .container .title h1 {
+          text-align: center;
+          font-size: 30px;
+        }
 
+        .container .article .button {
+          text-align: center;
+        }
+
+        .container .article .button a {
+          padding: 6px 15px;
+          font-size: 16px;
+        }
+
+        .container .social i {
+          font-size: 19px;
+          width: 35px;
+          height: 35px;
+          line-height: 35px;
+        }
+      }
+
+      .copyright {
+        text-align: center;
+        color: white;
+        margin-bottom: 20px;
+        font-size: 12px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="navbar">
+      <div class="logo">
+        <img src="logo.jpg" alt="logo" width="54px" />
       </div>
-      <div class="content">
-        <div class="article">
-          <h3>At Death Lifter, we're more than just a gym</h3>
-          <p>Our state-of-the-art facility boasts cutting-edge equipment, expert trainers, and a diverse range of
-            fitness classes to cater to your unique needs. What sets us apart is not just the equipment but the people —
-            a passionate team of certified trainers and a vibrant community of members who share the same goal: to lead
-            a healthier, more active life.
-            Whether you're a seasoned fitness enthusiast or just starting your journey, our personalized approach
-            ensures that you receive the guidance and support needed to achieve your goals. Beyond physical fitness, we
-            offer wellness services, nutritional guidance, and a variety of amenities to nurture your overall
-            well-being.
-          </p>
-      
-          <div class="button">
-            <a href="#">Read More</a>
+
+      <div class="hm">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+
+      <div class="link">
+        <ul>
+          <li><a href="index.html" id="homeLink">Home</a></li>
+          <li><a href="about.html">About us</a></li>
+          <li><a href="programs.html">Programs</a></li>
+          <li><a href="trainers.html">Trainers</a></li>
+          <li><a href="contact.html">Contact us</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="container">
+        <div class="title">
+          <h1>About Us</h1>
+        </div>
+        <div class="content">
+          <div class="article">
+            <h3>At Death Lifter, we're more than just a gym</h3>
+            <p>
+              Our state-of-the-art facility boasts cutting-edge equipment,
+              expert trainers, and a diverse range of fitness classes to cater
+              to your unique needs. What sets us apart is not just the equipment
+              but the people — a passionate team of certified trainers and a
+              vibrant community of members who share the same goal: to lead a
+              healthier, more active life. Whether you're a seasoned fitness
+              enthusiast or just starting your journey, our personalized
+              approach ensures that you receive the guidance and support needed
+              to achieve your goals. Beyond physical fitness, we offer wellness
+              services, nutritional guidance, and a variety of amenities to
+              nurture your overall well-being.
+            </p>
+
+            <div class="button">
+              <a href="#">Read More</a>
+            </div>
           </div>
         </div>
 
-      </div>
-    
-      <div class="image-section">
-        <img src="Image.jpg" alt="PICK">
-      </div>
- 
-      <div class="social">
-        <a href="#"><i class="fab fa-facebook-f"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
-        <a href="#"><i class="fab fa-youtube"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
+        <div class="image-section">
+          <img src="Image.jpg" alt="PICK" />
+        </div>
 
+        <div class="social">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
       </div>
-  
+      <p class="copyright"><em>All rights reserved ©DeathLifter</em></p>
     </div>
-  <p class="copyright"><em>All rights reserved  ©DeathLifter</em></p>
 
+    <script>
+      const hm = document.querySelector(".hm");
 
+      hm.addEventListener("click", function () {
+        const navbar = document.querySelector(".link");
+        navbar.classList.toggle("active");
+      });
 
-
-
-
- <script>
-  const hm = document.querySelector(".hm");
-
-  hm.addEventListener("click", function () {
-    const navbar = document.querySelector(".link");
-    navbar.classList.toggle("active");
-  });
-
-  const homeLink = document.querySelector('a[href="index.html"]');
-  homeLink.addEventListener("click", function (event) {
-    event.preventDefault();
-    window.location.href = "index.html";
-  });
-
-</script>
-</body>
-
+      const homeLink = document.querySelector('a[href="index.html"]');
+      homeLink.addEventListener("click", function (event) {
+        event.preventDefault();
+        window.location.href = "index.html";
+      });
+    </script>
+  </body>
 </html>

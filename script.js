@@ -208,7 +208,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-
 function toggleLoginForm() {
   const loginForm = document.getElementById("loginForm");
   const overlay = document.getElementById("overlay");
@@ -227,11 +226,12 @@ function toggleLoginForm() {
   }
 }
 
-document.getElementById('showLoginForm').addEventListener('click', function(event) {
-  event.preventDefault(); 
-  toggleLoginForm();
-});
-
+document
+  .getElementById("showLoginForm")
+  .addEventListener("click", function (event) {
+    event.preventDefault();
+    toggleLoginForm();
+  });
 
 const loginForm = document.getElementById("loginForm");
 loginForm.addEventListener("submit", function (e) {
@@ -239,14 +239,13 @@ loginForm.addEventListener("submit", function (e) {
   validateLoginInputs();
 });
 
-
 function validateLoginInputs() {
   const usernameValue = document.getElementById("username2").value.trim();
   const passwordValue = document.getElementById("passwordL").value.trim();
 
-  // 
-  const usernameError = document.getElementById('usernameError');
-  const usernameRegex = /^[^0-9][\w\d]*$/; 
+  //
+  const usernameError = document.getElementById("usernameError");
+  const usernameRegex = /^[^0-9][\w\d]*$/;
 
   if (!usernameRegex.test(usernameValue)) {
     usernameError.textContent = "Username is not valid.";
@@ -254,27 +253,27 @@ function validateLoginInputs() {
     usernameError.textContent = "";
   }
 
-  
-  const passwordError = document.getElementById('passwordError');
+  const passwordError = document.getElementById("passwordError");
   const passwordMinLength = 8;
 
   if (passwordValue.length < passwordMinLength) {
-    passwordError.textContent = "Password should be at least 8 characters long.";
+    passwordError.textContent =
+      "Password should be at least 8 characters long.";
   } else {
     passwordError.textContent = "";
   }
 
-  
-  if (usernameRegex.test(usernameValue) && passwordValue.length >= passwordMinLength) {
-    redirectToIndex(); 
+  if (
+    usernameRegex.test(usernameValue) &&
+    passwordValue.length >= passwordMinLength
+  ) {
+    redirectToIndex();
   }
 }
-
 
 function redirectToIndex() {
   window.location.href = "index.html";
 }
-
 
 function changeButtonColor2() {
   const submitButton2 = document.getElementById("submitButton2");
@@ -290,18 +289,20 @@ submitButton2.addEventListener("click", () => {
   changeButtonColor2();
 });
 
+const slider = document.querySelector(".image-slider");
+const arrowLeft = document.querySelector(".arrow-left");
+const arrowRight = document.querySelector(".arrow-right");
+const heading = document.querySelector(".caption h1");
+const description = document.querySelector(".caption p");
 
+const headings = "Death Lifter";
+const descriptions = [
+  "Your Only Limit is You",
+  "Train insane or remain the same",
+  "Embrace the pain to witness the change.",
+];
 
-const slider = document.querySelector('.image-slider');
-const arrowLeft = document.querySelector('.arrow-left');
-const arrowRight = document.querySelector('.arrow-right');
-const heading = document.querySelector('.caption h1');
-const description = document.querySelector('.caption p');
-
-const headings = 'Death Lifter';
-const descriptions = ['Your Only Limit is You', 'Train insane or remain the same', 'Embrace the pain to witness the change.'];
-
-const images = ['photo1slider.png', 'p2.avif', 'p3.avif'];
+const images = ["photo1slider.png", "p2.avif", "p3.avif"];
 
 let id = 0;
 
@@ -315,7 +316,7 @@ function initializeSlider() {
   slide(id);
 }
 
-arrowLeft.addEventListener('click', () => {
+arrowLeft.addEventListener("click", () => {
   id--;
 
   if (id < 0) {
@@ -324,7 +325,7 @@ arrowLeft.addEventListener('click', () => {
   slide(id);
 });
 
-arrowRight.addEventListener('click', () => {
+arrowRight.addEventListener("click", () => {
   id++;
 
   if (id > images.length - 1) {
@@ -332,7 +333,3 @@ arrowRight.addEventListener('click', () => {
   }
   slide(id);
 });
-
-
-
-
