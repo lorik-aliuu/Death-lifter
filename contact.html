@@ -235,12 +235,26 @@
               color: white;
               border-radius: 10px;
               width: 100%;
+              color: black;
+          }
+
+          .contactForm input:focus{
+            background-color: black;
+            color: white;
+            font-weight: bold;
           }
 
           .contactForm textarea{
               height: 100px;
               width: 100%;
               border-radius: 10px;
+              color: black;
+          }
+
+          .contactForm textarea:focus{
+            background-color: black;
+            color: white;
+            font-weight: bold;
           }
 
 
@@ -384,11 +398,11 @@
           </div>
           <div class="inputBox">
             <label for="email">Email</label><br />
-            <input type="text" name="email" required="required" />
+            <input type="email" name="email" required="required"  />
           </div>
           <div class="inputBox">
             <span>Type your message:</span><br />
-            <textarea required="required"></textarea>
+            <textarea required="required" autocomplete="none"></textarea>
           </div>
           <div class="inputBox">
             <input

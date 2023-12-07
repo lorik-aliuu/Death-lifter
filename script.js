@@ -144,26 +144,6 @@ function toggleRegisterForm() {
   }
 }
 
-function changeButtonColor() {
-  const submitButton = document.getElementById("submitButton");
-  submitButton.style.backgroundColor = "black";
-  submitButton.style.color = "white";
-  setTimeout(() => {
-    submitButton.style.backgroundColor = "";
-  }, 500);
-}
-
-const submitButton = document.getElementById("submitButton");
-submitButton.addEventListener("click", () => {
-  changeButtonColor();
-});
-
-const aboutLink = document.querySelector('a[href="about.html"]');
-aboutLink.addEventListener("click", function (event) {
-  event.preventDefault();
-  window.location.href = "about.html";
-});
-
 document.addEventListener("DOMContentLoaded", function () {
   const servicesLink = document.getElementById("servicesLink");
   const ourServices = document.getElementById("ourServices");
@@ -275,18 +255,32 @@ function redirectToIndex() {
   window.location.href = "index.html";
 }
 
+function changeButtonColor() {
+  const submitButton = document.getElementById("submitButton");
+  submitButton.style.backgroundColor = "black";
+  submitButton.style.color = "white";
+  setTimeout(() => {
+    submitButton.style.backgroundColor = "";
+  }, 100);
+}
+
 function changeButtonColor2() {
   const submitButton2 = document.getElementById("submitButton2");
   submitButton2.style.backgroundColor = "black";
   submitButton2.style.color = "white";
   setTimeout(() => {
     submitButton2.style.backgroundColor = "";
-  }, 500);
+  }, 100);
 }
 
 const submitButton2 = document.getElementById("submitButton2");
 submitButton2.addEventListener("click", () => {
   changeButtonColor2();
+});
+
+const submitButton = document.getElementById("submitButton");
+submitButton.addEventListener("click", () => {
+  changeButtonColor();
 });
 
 const slider = document.querySelector(".image-slider");
