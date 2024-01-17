@@ -78,7 +78,7 @@
     <h3>Let's start the work now!</h3>
 
     <div class="content">
-      <a href="index.html" class="linku">Go back</a>
+      <a href="index.php" class="linku">Go back</a>
     </div>
   </body>
 </html>
