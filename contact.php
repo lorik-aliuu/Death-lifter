@@ -17,82 +17,12 @@
             font-family: 'Popins', sans-serif;
           }
 
-          .navbar {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            background-color: black;
-          }
+         
 
-          .link ul {
-            list-style: none;
-            display: flex;
-          }
-
-          .link a {
-            margin-right: 26px;
-            text-decoration: none;
-            color: white;
-            font-size: 17px;
-            font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-              "Lucida Sans", Arial, sans-serif;
-            transition: all 0.2s;
-            position: relative;
-            z-index: 9999;
-          }
-
-          .link a::before {
-            content: "";
-            position: absolute;
-            width: 100%;
-            height: 2px;
-            bottom: 0;
-            left: 0;
-            background-color: transparent;
-            transform: scaleX(0);
-            transform-origin: bottom right;
-            transition: transform 0.3s ease;
-          }
-
-          .link a:hover::before {
-            background-color: white;
-            transform: scaleX(1);
-            transform-origin: bottom left;
-          }
-
-          .link a:not(:last-child)::after {
-            content: "";
-            position: absolute;
-            width: 100%;
-            height: 2px;
-            bottom: 0;
-            left: 0;
-            background-color: transparent;
-            transform: scaleX(0);
-            transform-origin: bottom right;
-            transition: transform 0.3s ease;
-          }
-
-          .link a:hover::after {
-            background-color: transparent;
-            transform: scaleX(0);
-          }
-
-          .hm {
-            display: none;
-          }
-
-          @media only screen and (max-width: 1360px) {
-            .navbar {
-              padding: 0 50px;
-            }
-
-          }
+       
 
           @media only screen and (max-width: 1200px) {
-            .navbar {
-              padding: 0 30px;
-            }
+          
             .container{
               display: flex;
               justify-content: center;
@@ -109,53 +39,7 @@
           }
 
           @media only screen and (max-width: 900px) {
-            .hm {
-              display: block;
-              cursor: pointer;
-            }
-
-            .hm .line {
-              width: 30px;
-              height: 3px;
-              background: #fefefe;
-              margin: 6px 0;
-            }
-
-            .link {
-              height: 0;
-              position: absolute;
-              top: 50px;
-              left: 0;
-              right: 0;
-              width: 100vw;
-              background: black;
-              transition: 0.5s;
-              overflow: hidden;
-              z-index: 9999;
-            }
-
-            .link.active {
-              height: 450px;
-            }
-
-            .link ul {
-              display: block;
-              width: fit-content;
-              margin: 80px auto 0 auto;
-              text-align: center;
-              transition: 0.5s;
-              opacity: 0;
-            }
-
-            .link.active ul {
-              opacity: 1;
-            }
-
-            .link ul li a {
-              margin-bottom: 27px;
-              font-size: 25px;
-              font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-            }
+           
             .container{
               display: flex;
               flex-direction: column;
@@ -269,87 +153,21 @@
           }
 
 
-          .social i {
-              font-size: 19px;
-              width: 35px;
-              height: 35px;
-              line-height: 35px;
-
-            }
-          }
+         
+          
 
 
 
-          .footer{
-              padding: 70px;
-
-          }
-
-          .footer .social {
-            width: 100%;
-            clear: both;
-            margin-top: 50px;
-            text-align: center;
-            display: inline-block;
-
-
-          }
-
-          .footer .social i {
-            color: black;
-            font-size: 22px;
-            height: 45px;
-            width: 45px;
-            background-color: white;
-            border: 2px solid black;
-            border-radius: 50%;
-            align-items: center;
-            line-height: 45px;
-            text-align: center;
-            margin-top: 0 10px;
-
-          }
-
-          .footer .social i:hover {
-            color: cornflowerblue;
-            background-color: darkgray;
-            transition: 1s ease;
-            transform: rotate(360deg);
-
-          }
-
-          .social p{
-              color: white;
-              text-align: center;
-               color: white;
-               margin-bottom: 20px;
-              font-size: 12px;
-              margin-top: 10px;
-          }
+       
+        
     </style>
   </head>
   <body>
-    <div class="navbar">
-      <div class="logo">
-        <img src="logo.jpg" alt="logo" width="54px" />
-      </div>
+   <?php
 
-      <div class="hm">
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
-      </div>
+   include 'header.php';
 
-      <div class="link">
-        <ul>
-          <li><a href="index.html" id="homeLink">Home</a></li>
-          <li><a href="about.html" id="aboutLink">About us</a></li>
-          <li><a href="programs.html" id="programsLink">Programs</a></li>
-          <li><a href="trainers.html" id="trainersLink">Trainers</a></li>
-          <li><a href="contact.html" id="contactLink">Contact us</a></li>
-        </ul>
-      </div>
-    </div>
+   ?>
 
     <div class="content">
       <h2>Contact us</h2>
@@ -416,23 +234,11 @@
       </div>
     </div>
 
-    <div class="footer">
-      <div class="social">
-        <a href="#"><i class="fab fa-facebook-f"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
-        <a href="#"><i class="fab fa-youtube"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <p class="copyright"><em>All rights reserved ©DeathLifter</em></p>
-      </div>
-    </div>
+  <?php
 
-    <script>
-      const hm = document.querySelector(".hm");
+  include 'footer.php';
 
-      hm.addEventListener("click", function () {
-        const navbar = document.querySelector(".link");
-        navbar.classList.toggle("active");
-      });
-    </script>
+  ?>
+
   </body>
 </html>
