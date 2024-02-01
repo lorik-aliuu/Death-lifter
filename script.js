@@ -1,4 +1,3 @@
-const hm = document.querySelector(".hm");
 const typewriter = document.getElementById("typewriter");
 const form = document.getElementById("form");
 const username = document.getElementById("username");
@@ -6,11 +5,6 @@ const email = document.getElementById("email");
 const password = document.getElementById("password");
 const password2 = document.getElementById("password2");
 const registerForm = document.getElementById("registerForm");
-
-hm.addEventListener("click", function () {
-  const navbar = document.querySelector(".link");
-  navbar.classList.toggle("active");
-});
 
 const textToType = "Your only limit is you.";
 
@@ -38,7 +32,7 @@ function handleClick() {
   }
 }
 
-form.addEventListener("submit", function (e) {
+document.getElementById("submitButton").addEventListener("click", function (e) {
   e.preventDefault();
   validateInputs();
 });
@@ -65,10 +59,6 @@ function isValidEmail(email) {
   const re =
     /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   return re.test(String(email).toLowerCase());
-}
-
-function redirectToSuccess() {
-  window.location.href = "success.html";
 }
 
 function validateInputs() {
@@ -127,8 +117,12 @@ function validateInputs() {
     .parentElement.classList.contains("success");
 
   if (usernameValid && emailValid && passwordValid && password2Valid) {
-    redirectToSuccess();
+    submitForm();
   }
+}
+
+function submitForm() {
+  document.getElementById("form").submit();
 }
 
 function toggleRegisterForm() {
@@ -143,50 +137,6 @@ function toggleRegisterForm() {
     backgroundImage.style.filter = "blur(50px)";
   }
 }
-
-document.addEventListener("DOMContentLoaded", function () {
-  const servicesLink = document.getElementById("servicesLink");
-  const ourServices = document.getElementById("ourServices");
-
-  servicesLink.addEventListener("click", function (event) {
-    event.preventDefault();
-    smoothScrollTo(ourServices);
-  });
-
-  function smoothScrollTo(target) {
-    const targetPosition = target.getBoundingClientRect().top + window.scrollY;
-    const startPosition = window.pageYOffset;
-    const distance = targetPosition - startPosition;
-    const duration = 1000;
-    let start = null;
-
-    function animation(currentTime) {
-      if (start === null) {
-        start = currentTime;
-      }
-      const timeElapsed = currentTime - start;
-      const scroll = easeInOutQuad(
-        timeElapsed,
-        startPosition,
-        distance,
-        duration
-      );
-      window.scrollTo(0, scroll);
-      if (timeElapsed < duration) {
-        requestAnimationFrame(animation);
-      }
-    }
-
-    function easeInOutQuad(t, b, c, d) {
-      t /= d / 2;
-      if (t < 1) return (c / 2) * t * t + b;
-      t--;
-      return (-c / 2) * (t * (t - 2) - 1) + b;
-    }
-
-    requestAnimationFrame(animation);
-  }
-});
 
 function toggleLoginForm() {
   const loginForm = document.getElementById("loginForm");
@@ -213,17 +163,17 @@ document
     toggleLoginForm();
   });
 
-const loginForm = document.getElementById("loginForm");
-loginForm.addEventListener("submit", function (e) {
-  e.preventDefault();
-  validateLoginInputs();
-});
+document
+  .getElementById("submitButton2")
+  .addEventListener("click", function (e) {
+    e.preventDefault();
+    validateLoginInputs();
+  });
 
 function validateLoginInputs() {
   const usernameValue = document.getElementById("username2").value.trim();
   const passwordValue = document.getElementById("passwordL").value.trim();
 
-  //
   const usernameError = document.getElementById("usernameError");
   const usernameRegex = /^[^0-9][\w\d]*$/;
 
@@ -247,12 +197,12 @@ function validateLoginInputs() {
     usernameRegex.test(usernameValue) &&
     passwordValue.length >= passwordMinLength
   ) {
-    redirectToIndex();
+    submitLoginForm();
   }
 }
 
-function redirectToIndex() {
-  window.location.href = "index.html";
+function submitLoginForm() {
+  document.getElementById("Loginform").submit();
 }
 
 function changeButtonColor() {

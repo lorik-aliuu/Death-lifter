@@ -4,75 +4,7 @@
   box-sizing: border-box;
 }
 
-.navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: black;
-}
-
-.link ul {
-  list-style: none;
-  display: flex;
-}
-
-.link a {
-  margin-right: 26px;
-  text-decoration: none;
-  color: white;
-  font-size: 17px;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
-  transition: all 0.2s;
-  position: relative;
-}
-
-.link a::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  background-color: transparent;
-  transform: scaleX(0);
-  transform-origin: bottom right;
-  transition: transform 0.3s ease;
-}
-
-.link a:hover::before {
-  background-color: white;
-  transform: scaleX(1);
-  transform-origin: bottom left;
-}
-
-.link a:not(:last-child)::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  background-color: transparent;
-  transform: scaleX(0);
-  transform-origin: bottom right;
-  transition: transform 0.3s ease;
-}
-
-.link a:hover::after {
-  background-color: transparent;
-  transform: scaleX(0);
-}
-
-.hm {
-  display: none;
-}
-
 @media only screen and (max-width: 1360px) {
-  .navbar {
-    padding: 0 50px;
-  }
-
   .background h1 {
     top: 35% !important;
     font-size: 55px !important;
@@ -103,10 +35,6 @@
 }
 
 @media only screen and (max-width: 1200px) {
-  .navbar {
-    padding: 0 30px;
-  }
-
   .background h1 {
     font-size: 45px !important;
   }
@@ -132,54 +60,6 @@
 }
 
 @media only screen and (max-width: 900px) {
-  .hm {
-    display: block;
-    cursor: pointer;
-  }
-
-  .hm .line {
-    width: 30px;
-    height: 3px;
-    background: #fefefe;
-    margin: 6px 0;
-  }
-
-  .link {
-    height: 0;
-    position: absolute;
-    top: 50px;
-    left: 0;
-    right: 0;
-    width: 100vw;
-    background: black;
-    transition: 0.5s;
-    overflow: hidden;
-    z-index: 9999;
-  }
-
-  .link.active {
-    height: 450px;
-  }
-
-  .link ul {
-    display: block;
-    width: fit-content;
-    margin: 80px auto 0 auto;
-    text-align: center;
-    transition: 0.5s;
-    opacity: 0;
-  }
-
-  .link.active ul {
-    opacity: 1;
-  }
-
-  .link ul li a {
-    margin-bottom: 27px;
-    font-size: 25px;
-    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-  }
-
   .background h1 {
     font-size: 35px !important;
   }
@@ -215,27 +95,6 @@
   .services3,
   .services4 {
     margin-top: 30px;
-  }
-
-  .footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .footer .social {
-    display: flex;
-    justify-content: center;
-  }
-
-  .footer .social a {
-    margin: 0 10px;
-  }
-
-  .footer p {
-    color: white;
-    margin-top: 10px;
-    font-size: 12px;
   }
 }
 
@@ -377,8 +236,6 @@
   font-weight: bold;
 }
 
-
-
 .container .input-control {
   display: flex;
   flex-direction: column;
@@ -501,8 +358,6 @@ span {
   font-weight: bold;
 }
 
-
-
 .container2 .input-control input:focus {
   outline: 0;
 }
@@ -519,53 +374,6 @@ span {
   color: #ff3860;
   font-size: 13px;
   height: 13px;
-}
-
-.social i {
-  font-size: 19px;
-  width: 35px;
-  height: 35px;
-  line-height: 35px;
-}
-
-.footer .social {
-  width: 100%;
-  clear: both;
-  padding: 60px;
-  margin-top: 50px;
-  text-align: center;
-  display: inline-block;
-  background-color: black;
-  height: 200px;
-}
-
-.footer .social i {
-  color: black;
-  font-size: 22px;
-  height: 45px;
-  width: 45px;
-  background-color: white;
-  border: 2px solid black;
-  border-radius: 50%;
-  align-items: center;
-  line-height: 45px;
-  text-align: center;
-  margin-top: 0 10px;
-}
-
-.footer .social i:hover {
-  color: cornflowerblue;
-  background-color: darkgray;
-  transition: 1s ease;
-  transform: rotate(360deg);
-}
-
-.footer .copyright {
-  color: white;
-  text-align: center;
-  margin-bottom: 20px;
-  font-size: 12px;
-  margin-top: 10px;
 }
 
 .image-slider {

@@ -12,28 +12,12 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="navbar">
-      <div class="logo">
-        <img src="logo.jpg" alt="logo" width="54px" />
-      </div>
+   
+  <?php
 
-      <div class="hm">
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
-      </div>
+    include "header.php";
 
-      <div class="link">
-        <ul>
-          <li><a href="index.html" id="homeLink">Home</a></li>
-          <li><a href="#" id="servicesLink">Services</a></li>
-          <li><a href="about.html" id="aboutLink">About us</a></li>
-          <li><a href="programs.html" id="programsLink">Programs</a></li>
-          <li><a href="trainers.html" id="trainersLink">Trainers</a></li>
-          <li><a href="contact.html">Contact us</a></li>
-        </ul>
-      </div>
-    </div>
+    ?>
 
     <div class="background">
       <img
@@ -63,7 +47,7 @@
     <div class="overlay" id="overlay"></div>
 
     <div class="container" id="registerForm" style="display: none">
-      <form id="form" action="/">
+      <form id="form" action="UserRegistration.php" method="post">
         <h1>Join us today!</h1>
         <div class="input-control">
           <label for="username">Username</label>
@@ -176,13 +160,13 @@
     </section>
 
     <div class="container2" id="loginForm" style="display: none">
-      <form id="Loginform" action="/">
+      <form id="Loginform" action="loginValidation.php" method="post">
         <h1>Log-in to your account</h1>
         <div class="input-control">
           <label for="username">Username</label>
           <input
             id="username2"
-            name="username"
+            name="usernameLogin"
             type="text"
             placeholder="Enter your username"
           />
@@ -193,7 +177,7 @@
           <label for="password">Password</label>
           <input
             id="passwordL"
-            name="password"
+            name="passwordLogin"
             type="password"
             placeholder="Enter your password"
           />
@@ -201,19 +185,15 @@
         </div>
         <br />
 
-        <button  id="submitButton2">Log in</button>
+        <button  id="submitButton2" name="submitButton2">Log in</button>
       </form>
     </div>
 
-    <div class="footer">
-      <div class="social">
-        <a href="#"><i class="fab fa-facebook-f"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
-        <a href="#"><i class="fab fa-youtube"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <p class="copyright"><em>All rights reserved ©DeathLifter</em></p>
-      </div>
-    </div>
+   <?php
+
+    include "footer.php";
+
+    ?>
 
     <script src="script.js"></script>
   </body>
